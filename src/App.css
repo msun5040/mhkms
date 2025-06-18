@@ -13,18 +13,25 @@
   }
 }
 
-
 .canvas {
   background-color: #8ca5e0;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 2em;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  overflow: hidden;
+  overflow:hidden;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: 160px;
+  width: 100%; 
+  z-index: 1;
 }
+
 
 .App-link {
   color: #61dafb;

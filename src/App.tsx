@@ -6,9 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className='canvas' id="canvas"> 
-          <ImageCanvas />
-      </div>
+        <ImageCanvas />
     </div>
   );
 }
