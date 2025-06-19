@@ -1,0 +1,23 @@
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-player {
+    display: flex;
+    width: 40vw;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchMedia } from './firebaseUtils/firebase';
-import Polaroid from './components/polaroid';
+import PolaroidDiv from './components/Polaroid';
+import VideoView from './components/VideoView';
 
 function ImageCanvas() {
     const [media, setMedia] = useState<{
@@ -16,15 +17,23 @@ function ImageCanvas() {
         loadMedia();
     }, []);
 
+    const [videoPlaying, setVideoPlaying] = useState<string | null>(null);
+
     return (
         <div className="canvas" id="canvas">
             {media.mediaList.map((item, i) => (
-                <Polaroid
+                <PolaroidDiv
                     index={i}
                     image={item.image}
-                    video={item.video}
+                    onClick={()=>setVideoPlaying(item.video)}
                 />
             ))}
+            {videoPlaying && (
+                <VideoView
+                    video={videoPlaying}
+                    onClose={() => setVideoPlaying(null)}
+                />
+            )}
         </div>
     );
 }
