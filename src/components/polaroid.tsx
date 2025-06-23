@@ -5,18 +5,23 @@ type PolaroidProps = {
     index: number;
     image: string;
     onClick: () => void;
+    transforms: {
+        x: number;
+        y: number;
+        rotation: number;
+    };
 };
 
-const PolaroidDiv: React.FC<PolaroidProps> = ({index, image, onClick}) => {
+const PolaroidDiv: React.FC<PolaroidProps> = ({index, image, onClick, transforms}) => {
     const handleClick = () => {
         console.log(`Polaroid ${index} clicked`);
         onClick();
+        const polaroidElement = document.getElementById(`polaroid-${index}`);
+        if (polaroidElement) {
+            
+        }
     };
 
-    const transforms = {
-                x: Math.random() * 20 - 10,
-                y: Math.random() * 20 - 10,
-                rotation: Math.random() * 20 - 10};
     return (
         <div
             className="item"
