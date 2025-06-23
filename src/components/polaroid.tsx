@@ -22,13 +22,17 @@ const PolaroidDiv: React.FC<PolaroidProps> = ({index, image, onClick, transforms
         }
     };
 
+    const customStyle = {
+        '--x': `${transforms.x}px`,
+        '--y': `${transforms.y}px`,
+        transform: `translate(var(--x), var(--y)) rotate(${transforms.rotation}deg)`,
+    };
+
     return (
         <div
             className="item"
             id={`item-${index}`}
-            style={{
-                transform: `translate(${transforms.x}px, ${transforms.y}px) rotate(${transforms.rotation}deg)`,
-            }}
+            style={customStyle}
             onClick={handleClick}
         >
             <div className="polaroid" id={`polaroid-${index}`}>
